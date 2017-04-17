@@ -1,1 +1,40 @@
-{     "devDependencies": {         "angular-local-storage": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-angular-local-storage",     "homepage": "https://github.com/npmtest/node-npmtest-angular-local-storage",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-angular-local-storage.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "test coverage for [angular-local-storage (v0.5.2)](https://github.com/grevory/angular-local-storage) [![npm package](https://img.shields.io/npm/v/npmtest-angular-local-storage.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-angular-local-storage) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-angular-local-storage.svg)](https://travis-ci.org/npmtest/node-npmtest-angular-local-storage)",
+    "devDependencies": {
+        "angular-local-storage": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-angular-local-storage",
+    "keywords": [
+        "coverage",
+        "test",
+        "angular-local-storage"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_angular_local_storage.js",
+    "name": "npmtest-angular-local-storage",
+    "nameAlias": "npmtest_angular_local_storage",
+    "nameOriginal": "npmtest-angular-local-storage",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-angular-local-storage.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
